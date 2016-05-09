@@ -1,0 +1,30 @@
+{
+  "name": "antonienko/Ph7lconApi",
+  "type": "library",
+  "description": "PHP 7 REST Api using Phalcon's Micro Application",
+  "keywords": [
+    "rest",
+    "api",
+    "php7",
+    "php",
+    "phalcon"
+  ],
+  "homepage": "n/a",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Antonio Manuel Hernández Sánchez",
+      "homepage": "http://antoniohs.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "antonienko\\Ph7lconApi\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "antonienko\\tests\\Ph7lconApi\\": "tests/"
+    }
+  }
+}
