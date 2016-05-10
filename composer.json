@@ -9,7 +9,6 @@
     "php",
     "phalcon"
   ],
-  "homepage": "n/a",
   "license": "MIT",
   "authors": [
     {
@@ -26,5 +25,11 @@
     "psr-4": {
       "antonienko\\tests\\Ph7lconApi\\": "tests/"
     }
+  },
+  "require": {
+    "php": ">=7.0"
+  },
+  "require-dev": {
+    "sneakybobito/phalcon-stubs": ">=2.0.10"
   }
 }

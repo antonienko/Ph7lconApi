@@ -1,0 +1,46 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "14b38502b6ecce8f4ea4888feb44b4b3",
+    "content-hash": "69bfecdae2e0d1adeaf05e6b9f8e5864",
+    "packages": [],
+    "packages-dev": [
+        {
+            "name": "sneakybobito/phalcon-stubs",
+            "version": "v2.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gsouf/phalcon-stubs.git",
+                "reference": "db6bef83649bfd84b8b5b36297235d99be29a661"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gsouf/phalcon-stubs/zipball/db6bef83649bfd84b8b5b36297235d99be29a661",
+                "reference": "db6bef83649bfd84b8b5b36297235d99be29a661",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "IDE Stubs for phalconphp",
+            "homepage": "https://github.com/gsouf/phalcon-stubs",
+            "keywords": [
+                "ide",
+                "phalcon",
+                "stubs"
+            ],
+            "time": "2016-03-20 10:34:10"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.0"
+    },
+    "platform-dev": []
+}
