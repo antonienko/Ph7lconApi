@@ -19,7 +19,7 @@ final class JsonResponse extends Response implements ResponseInterface
             'developerErrorCode' => $developerErrorCode,
             'developerErrorMessage' => $developerErrorMessage,
         ];
-        return self::instantiate($result, $errorCode, 'KO');
+        return self::create($result, $errorCode, 'KO');
     }
 
     public static function ok($data)
@@ -28,10 +28,10 @@ final class JsonResponse extends Response implements ResponseInterface
             'status' => 'OK',
             'data' => $data
         ];
-        return self::instantiate($result, 200, 'OK');
+        return self::create($result, 200, 'OK');
     }
 
-    private static function instantiate(array $content, int $statusCode, string $statusMessage) : JsonResponse
+    public static function create(array $content, int $statusCode, string $statusMessage) : JsonResponse
     {
         return (new self)
             ->setContentType('application/json')
