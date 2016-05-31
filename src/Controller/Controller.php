@@ -7,13 +7,4 @@ use Phalcon\Mvc\Controller as PhalconController;
 
 class Controller extends PhalconController
 {
-    protected function okResult($data) : ResponseInterface
-    {
-        return JsonResponse::ok($data);
-    }
-
-    protected function koResult(string $errorMessage, int $errorCode, int $developerErrorCode, string $developerErrorMessage) : ResponseInterface
-    {
-        return JsonResponse::error($errorMessage, $errorCode, $developerErrorCode, $developerErrorMessage);
-    }
 }
