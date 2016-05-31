@@ -2,6 +2,7 @@
 namespace antonienko\Ph7lconApi\DI;
 
 use antonienko\Ph7lconApi\Request\ApiRequest;
+use antonienko\Ph7lconApi\Response\ErrorHandler;
 use Phalcon\{
     Config, Config\Adapter\Yaml, Db\Adapter\Pdo\Mysql, Di as PhalconDi, Mvc\Router
 };
@@ -16,10 +17,6 @@ class DI extends PhalconDi implements DIInterface
             return new ApiRequest();
         });
 
-        $this->setShared('oauth2', function () {
-            return false; //ENTD
-        });
-
         $this->setShared('router', function () {
             return new Router;
         });
@@ -31,6 +28,11 @@ class DI extends PhalconDi implements DIInterface
         $this->setShared('resources', function () use ($resourcesConfigFile) {
             return new Yaml($resourcesConfigFile);
         });
+    }
+    
+    public function setErrorHandler(array $errorCodes)
+    {
+        return new ErrorHandler($errorCodes);
     }
 
 
