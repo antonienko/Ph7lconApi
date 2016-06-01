@@ -33,7 +33,7 @@ class HttpCodes
         return new HttpCode(constant("self::$code"), self::$codeReason[constant("self::$code")]);
     }
 
-    public static function getAverageErrorCode(array $codes)
+    public static function getAverageErrorCode(array $codes) : HttpCode
     {
         $all_equal = true;
         $there_is_a_5xx = false;
@@ -49,15 +49,15 @@ class HttpCodes
             }
         }
         if ($all_equal) {
-            return $initial;
+            return new HttpCode($initial, self::$codeReason[$initial]);
         } elseif ($there_is_a_5xx) {
-            return 500;
+            return new HttpCode(500, self::$codeReason[500]);
         } else {
-            return 400;
+            return new HttpCode(400, self::$codeReason[400]);
         }
     }
 
-    public static function isOkCode(int $code)
+    public static function isOkCode(int $code) : bool
     {
         return $code < 400;
     }
