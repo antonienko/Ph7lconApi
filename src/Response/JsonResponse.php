@@ -38,7 +38,7 @@ final class JsonResponse extends Response implements ResponseInterface
             ->setStatusCode($statusCode, $statusMessage);
     }
 
-    private static function okInstance(array $data, HttpCode $httpCode) : JsonResponse
+    private static function okInstance($data, HttpCode $httpCode) : JsonResponse
     {
         return self::instantiate(self::getOkResult($data), $httpCode->getStatusCode(), $httpCode->getStatusMessage());
     }
