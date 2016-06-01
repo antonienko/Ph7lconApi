@@ -32,7 +32,9 @@ class DI extends PhalconDi implements DIInterface
     
     public function setErrorHandler(array $errorCodes)
     {
-        return new ErrorHandler($errorCodes);
+        $this->setShared('errorHandler', function () use ($errorCodes) {
+            return new ErrorHandler($errorCodes);
+        });
     }
 
 
