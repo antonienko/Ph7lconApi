@@ -22,7 +22,7 @@ class ErrorHandler
     private function add(Error $error)
     {
         $this->errorsCollection[] = $error;
-        $this->httpCodes = $this->applicationErrorCodes[$error->code];
+        $this->httpCodes[] = $this->applicationErrorCodes[$error->code];
     }
 
     public function response() : JsonResponse
