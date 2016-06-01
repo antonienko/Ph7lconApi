@@ -30,7 +30,7 @@ final class JsonResponse extends Response implements ResponseInterface
         return self::errorInstance($data, $httpCode);
     }
 
-    private static function instantiate(array $content, int $statusCode, string $statusMessage) : JsonResponse
+    public static function instantiate(array $content, int $statusCode, string $statusMessage) : JsonResponse
     {
         return (new self)
             ->setContentType('application/json')
