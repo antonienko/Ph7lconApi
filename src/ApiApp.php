@@ -17,7 +17,7 @@ class ApiApp extends Micro
             return $errorHandler->handle($exception);
         });
         $this->notFound(function () use ($notFoundHandler) {
-            return $notFoundHandler->handle();
+            return $notFoundHandler->handle($this->request->getURI());
         });
 
         $this->mountResources();
