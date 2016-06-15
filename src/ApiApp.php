@@ -25,27 +25,27 @@ class ApiApp extends Micro
 
     private function mountResources()
     {
-
-
         /** @var Yaml $resources_configuration */
         $resources_configuration = $this->di->get('resources');
-        $namespace = $resources_configuration->get('namespace');
-        foreach ($resources_configuration->get('versions') as $version => $resources) {
-            foreach ($resources as $resourceName => $resource) {
+
+        $versions = $resources_configuration->get('versions');
+        foreach ($versions as $version => $version_config) {
+            $namespace = $version_config->get('namespace');
+            $resources = $version_config->get('resources');
+            foreach ($resources as $resource_name => $resource) {
                 $collection = new Collection();
                 $collection->setPrefix(
                     sprintf(
                         '/%s/%s',
                         strtolower($version),
-                        strtolower($resourceName)
+                        strtolower($resource_name)
                     )
                 );
                 $collection->setHandler(
                     sprintf(
-                        '\\%s\\%s\\Controllers\\%sController',
+                        '%s\\%sController',
                         $namespace,
-                        $version,
-                        $resourceName
+                        $resource_name
                     )
                 );
                 $collection->setLazy(true);
