@@ -1,5 +1,5 @@
 {
-  "name": "antonienko/Ph7lconApi",
+  "name": "antonienko/ph7lcon-api",
   "type": "library",
   "description": "PHP 7 REST Api using Phalcon's Micro Application",
   "keywords": [
