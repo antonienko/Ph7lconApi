@@ -9,7 +9,7 @@ class Controller extends PhalconController
     /** @var ErrorHandler */
     protected $errorHandler;
 
-    public function initialize()
+    public function onConstruct()
     {
         $this->errorHandler = $this->di->get('errorHandler');
     }
